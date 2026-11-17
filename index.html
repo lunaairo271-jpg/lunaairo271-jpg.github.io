@@ -1,129 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Luna Airo's personal GitHub Pages site"
-    />
-    <title>Luna Airo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <nav class="container nav">
-        <div class="brand">Luna Airo</div>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="experiment/index.html">Experiments</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-    </header>
-
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="大数据可视化实验：周末活主题与语义关系、深圳地铁估算车次人流回放。">
+  <title>大数据可视化实验</title>
+  <style>
+    :root{color-scheme:light;--ink:#243a4b;--muted:#687e8d;--paper:#f6f8fb;--gold:#ab7c25;--blue:#266482;--red:#df3648}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.8 "Microsoft YaHei UI","PingFang SC",sans-serif}a{color:inherit;text-underline-offset:5px}a:focus-visible{outline:3px solid #3986b1;outline-offset:6px;border-radius:2px}.shell{width:min(1180px,calc(100% - 64px));margin:auto}.top{display:flex;justify-content:space-between;align-items:center;padding:25px 0;color:var(--muted);font-size:12px}.top a{text-decoration:none}.top a:hover{text-decoration:underline}.site-name{font-weight:650;color:var(--ink);font-size:14px}.intro{padding:42px 0 34px}.intro h1{font-size:clamp(30px,4.6vw,51px);font-weight:600;line-height:1.35;letter-spacing:.025em;margin:0 0 17px}.intro p{margin:0;color:var(--muted);max-width:690px;font-size:15px}.experiments{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #d7e1e8;border-bottom:1px solid #d7e1e8;background:white}.experiment{min-width:0;display:flex;flex-direction:column}.experiment+.experiment{border-left:1px solid #d7e1e8}.preview{height:245px;overflow:hidden;margin:0;display:grid;place-items:center}.preview svg{width:100%;height:100%;display:block}.weekend .preview{background:#f7ebcb}.metro .preview{background:#edf4f8}.content{padding:29px 34px 30px;display:flex;flex-direction:column;flex:1}.medium{margin:0 0 8px;color:var(--muted);font-size:12px}.content h2{margin:0 0 12px;font-size:26px;font-weight:600;line-height:1.5}.content h2 a{text-decoration:none}.content h2 a:hover{text-decoration:underline}.description{margin:0 0 18px;max-width:43ch;color:#536a79;font-size:14px}.facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 18px;font-size:12px;color:#6e7d85}.facts span{white-space:nowrap}.notice{font-size:11px;line-height:1.8;color:#7b745f;margin:0 0 23px;max-width:47ch}.metro .notice{color:#86616b}.open{align-self:flex-start;display:inline-flex;align-items:center;gap:18px;text-decoration:none;border:1px solid currentColor;border-radius:4px;padding:8px 15px;font-size:13px;font-weight:600;margin-top:auto}.weekend .open{color:#825b15;background:#fffaf0}.metro .open{color:var(--blue);background:#f5fafc}.open:hover{background:#f0f3f6}.open svg{width:15px;height:15px}.use{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:31px 0 38px}.use h2{margin:0 0 7px;font-size:14px;font-weight:600}.use p{margin:0;color:var(--muted);font-size:12px;max-width:63ch}.footer{display:flex;justify-content:space-between;align-items:center;gap:18px;border-top:1px solid #d7e1e8;padding:20px 0 28px;font-size:11px;color:var(--muted)}.footer a{white-space:nowrap}.skip{position:absolute;left:16px;top:-100px;background:white;padding:8px 14px;z-index:10}.skip:focus{top:10px}
+    @media(min-width:1500px){.intro{padding-top:60px}.preview{height:280px}}
+    @media(max-width:760px){.shell{width:calc(100% - 32px)}.top{padding:19px 0;font-size:11px;gap:14px}.intro{padding:28px 0}.intro p{font-size:13px}.experiments{grid-template-columns:1fr}.experiment+.experiment{border-left:0;border-top:1px solid #d7e1e8}.preview{height:210px}.content{padding:25px}.content h2{font-size:23px}.description{max-width:none}.use{grid-template-columns:1fr;gap:23px;padding:27px 0}.footer{align-items:flex-start;font-size:10px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#experiments">跳到实验</a>
+  <div class="shell">
+    <nav class="top" aria-label="站点导航"><span class="site-name">Luna Airo 的实验室</span><a href="#experiments">选择实验</a></nav>
+    <header class="intro"><h1>大数据可视化实验</h1><p>一份社区活动记录，一组城市交通数据。分别从词语与人的关系、车次与时间的关系出发，尝试把数据变成可以探索的图形。</p></header>
     <main>
-      <section class="hero">
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <p class="eyebrow">Developer • Creator • Explorer</p>
-            <h1>Building digital experiences with clarity and purpose.</h1>
-            <p class="lead">
-              I design and build thoughtful web experiences, automate workflows,
-              and turn ideas into polished products.
-            </p>
-            <div class="cta-row">
-              <a class="button primary" href="#projects">View Projects</a>
-              <a class="button secondary" href="#contact">Contact Me</a>
-            </div>
+      <section class="experiments" id="experiments" aria-label="两个可视化实验">
+        <article class="experiment weekend" aria-labelledby="weekend-title">
+          <figure class="preview" aria-label="扇形图与径向词云的图形示意">
+            <svg viewBox="0 0 560 245" aria-hidden="true" focusable="false">
+              <g transform="translate(280 229)" stroke="#f7ebcb" stroke-width="3">
+                <path d="M-122 0A122 122 0 0 1-105.7-61L-75.3-43.5A87 87 0 0 0-87 0Z" fill="#a77428"/>
+                <path d="M-105.7-61A122 122 0 0 1-61-105.7L-43.5-75.3A87 87 0 0 0-75.3-43.5Z" fill="#c39a50"/>
+                <path d="M-61-105.7A122 122 0 0 1 18-120.7L12.8-86.1A87 87 0 0 0-43.5-75.3Z" fill="#8f6929"/>
+                <path d="M18-120.7A122 122 0 0 1 93.5-78.4L66.6-55.9A87 87 0 0 0 12.8-86.1Z" fill="#d1ac66"/>
+                <path d="M93.5-78.4A122 122 0 0 1 122 0L87 0A87 87 0 0 0 66.6-55.9Z" fill="#b88938"/>
+              </g>
+              <g fill="#886f3b" font-family="Microsoft YaHei UI,sans-serif" font-size="13">
+                <text x="85" y="186" transform="rotate(-65 85 186)">弹幕设计</text><text x="126" y="135" transform="rotate(-43 126 135)">时间与主题</text>
+                <text x="190" y="98" transform="rotate(-24 190 98)">关键词</text><text x="271" y="69" transform="rotate(4 271 69)">出题人</text>
+                <text x="366" y="98" transform="rotate(26 366 98)">语义关系</text><text x="423" y="145" transform="rotate(48 423 145)">社区创作</text>
+              </g>
+              <g fill="#b49a63" font-family="Microsoft YaHei UI,sans-serif" font-size="10"><text x="160" y="73" transform="rotate(-30 160 73)">词向量</text><text x="333" y="47" transform="rotate(17 333 47)">相似度</text><text x="458" y="165" transform="rotate(62 458 165)">聚焦</text></g>
+              <text x="280" y="216" text-anchor="middle" fill="#735623" font-family="Microsoft YaHei UI,sans-serif" font-size="11">主题与语义</text>
+            </svg>
+          </figure>
+          <div class="content">
+            <p class="medium">扇形图、径向词云与堆叠柱图</p>
+            <h2 id="weekend-title"><a href="./experiment/weekend_visualization/index.html">周末活主题图谱</a></h2>
+            <p class="description">谁提供了哪些主题？用词之间有什么关联？拖动时间区间，悬停关键词或聚焦出题人，探索主题数量与语义相似度。</p>
+            <p class="facts"><span>198 期主题</span><span>38 位出题人</span><span>342 个词组</span></p>
+            <p class="notice">前 200 期中缺少第 37、89 期。语义相似度不是概率，时间轴的月份宽度也不相等。</p>
+            <a class="open" href="./experiment/weekend_visualization/index.html" aria-label="进入周末活主题图谱">进入实验<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></a>
           </div>
-          <div class="hero-card">
-            <div class="card-glow"></div>
-            <div class="profile-box">
-              <div class="avatar">LA</div>
-              <div>
-                <h2>Luna Airo</h2>
-                <p>Frontend & Product-minded Developer</p>
-              </div>
-            </div>
-            <ul class="skill-list">
-              <li>HTML / CSS / JavaScript</li>
-              <li>GitHub Pages</li>
-              <li>UI Design</li>
-              <li>Product Thinking</li>
-            </ul>
+        </article>
+        <article class="experiment metro" aria-labelledby="metro-title">
+          <figure class="preview" aria-label="地铁线路与大小不同的人流红点的图形示意">
+            <svg viewBox="0 0 560 245" fill="none" aria-hidden="true" focusable="false">
+              <g stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M65 165H180L225 120H420L475 65" stroke="#79a28b"/><path d="M105 205V120L155 70H355L410 125V205" stroke="#8b7ca9"/><path d="M190 205V165L265 90V40" stroke="#6795b0"/><path d="M70 95H140L210 165H460" stroke="#bf9a64"/></g>
+              <g fill="#edf4f8" stroke="#8599a7" stroke-width="1.4"><circle cx="180" cy="165" r="4"/><circle cx="225" cy="120" r="4"/><circle cx="410" cy="125" r="4"/><circle cx="190" cy="165" r="4"/><circle cx="155" cy="70" r="4"/><circle cx="355" cy="70" r="4"/></g>
+              <g fill="#df3648" fill-opacity=".77" stroke="#fff" stroke-width="1.5"><circle cx="110" cy="165" r="8"/><circle cx="202" cy="143" r="13"/><circle cx="278" cy="120" r="20"/><circle cx="363" cy="120" r="10"/><circle cx="452" cy="88" r="5"/><circle cx="105" cy="147" r="14"/><circle cx="236" cy="70" r="10"/><circle cx="393" cy="108" r="18"/><circle cx="265" cy="62" r="7"/><circle cx="237" cy="118" r="12"/><circle cx="185" cy="140" r="9"/><circle cx="332" cy="165" r="14"/></g>
+              <g fill="#697f8e" stroke="none" font-family="Microsoft YaHei UI,sans-serif" font-size="11"><text x="66" y="225">车次</text><text x="248" y="225">时间</text><text x="428" y="225">样本人数</text></g>
+            </svg>
+          </figure>
+          <div class="content">
+            <p class="medium">地图、时间回放与客流动画</p>
+            <h2 id="metro-title"><a href="./experiment/shenzhen_metro_visualization/index.html">深圳地铁车次人流</a></h2>
+            <p class="description">把进出站记录分配到推算车次。播放时间轴，看红点沿线路移动；筛选线路、切换地图，点击红点查看当前区间与样本人数。</p>
+            <p class="facts"><span>8 条线路</span><span>166 个站点</span><span>2018 年 9 月 1 日</span></p>
+            <p class="notice">车次与人数均为模型估算，不是真实载客记录。样本仅到当天 11:30:58，下午没有数据。</p>
+            <a class="open" href="./experiment/shenzhen_metro_visualization/index.html" aria-label="进入深圳地铁车次人流">进入实验<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></a>
           </div>
-        </div>
+        </article>
       </section>
-
-      <section id="about" class="section">
-        <div class="container section-inner">
-          <div class="section-heading">
-            <p class="eyebrow">About</p>
-            <h2>Making ideas feel real.</h2>
-          </div>
-          <p class="about-text">
-            I enjoy creating elegant interfaces, experimenting with clean systems,
-            and building useful experiences that feel intuitive. This page is a
-            home for my work, ideas, and projects.
-          </p>
-        </div>
-      </section>
-
-      <section id="projects" class="section alt">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Projects</p>
-            <h2>Selected work</h2>
-          </div>
-          <div class="card-grid">
-            <article class="project-card">
-              <span class="tag">Web</span>
-              <h3>Portfolio Site</h3>
-              <p>A personal landing page highlighting projects, skills, and contact details.</p>
-            </article>
-            <article class="project-card">
-              <span class="tag">Automation</span>
-              <h3>Workflow Tools</h3>
-              <p>Helpful tools built to streamline repetitive tasks and improve productivity.</p>
-            </article>
-            <article class="project-card">
-              <span class="tag">Design</span>
-              <h3><a href="experiment/index.html">Data Visualization Experiments</a></h3>
-              <p>Explore community keywords and estimated metro passenger flows through interactive charts and maps.</p>
-              <nav class="project-links" aria-label="Visualization experiments">
-                <a href="experiment/weekend_visualization/index.html" lang="zh-CN">周末活主题图谱</a>
-                <a href="experiment/shenzhen_metro_visualization/index.html" lang="zh-CN">深圳地铁车次人流</a>
-                <a href="experiment/index.html">Browse both experiments</a>
-              </nav>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section">
-        <div class="container contact-box">
-          <div>
-            <p class="eyebrow">Contact</p>
-            <h2>Let’s build something meaningful.</h2>
-          </div>
-          <a href="mailto:hello@example.com" class="button primary">hello@example.com</a>
-        </div>
+      <section class="use" aria-label="浏览说明">
+        <div><h2>直接打开，交互探索</h2><p>两个实验均为静态网页，不需要登录或后端服务。索引页不预加载实验数据，点击后再进入对应页面；完整交互建议在桌面浏览器中使用。</p></div>
+        <div><h2>关于数据与协作</h2><p>数据范围与推算假设见各实验说明。深圳地铁页记录了用户与 AI 助手的协作分工；图形表达与动画不改变原始统计口径。</p></div>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© 2026 Luna Airo</p>
-        <a href="https://github.com/lunaairo271-jpg" target="_blank" rel="noreferrer">GitHub</a>
-      </div>
-    </footer>
-  </body>
+    <footer class="footer"><span>2026—2027 学年第一学期 · 大数据可视化课程实验</span><a href="https://github.com/lunaairo271-jpg/lunaairo271-jpg.github.io" target="_blank" rel="noopener noreferrer">查看网站仓库</a></footer>
+  </div>
+</body>
 </html>

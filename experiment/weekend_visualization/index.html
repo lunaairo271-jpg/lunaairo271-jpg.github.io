@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>周末活主题切片</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div>
+        <nav class="presets" aria-label="预设时间区间">
+          <button id="recent" type="button">最近半年</button>
+          <button id="all" type="button">全部 198 期</button>
+          <span class="similarity-key" title="点击作者锁定比较对象；姓名圈从内缘的相似度颜色单向淡至外缘的米黄色，内部扇区保持实色；使用 smoothstep(0.30, 0.80) 映射">
+            相似度 <span>低</span><i aria-hidden="true"></i><span>高</span>
+          </span>
+        </nav>
+        <p id="semantic-status" role="status">正在检查词向量…</p>
+      </div>
+      <aside class="summary" aria-label="当前区间摘要">
+        <div><strong id="stat-themes">0</strong><span>主题题</span></div>
+        <div><strong id="stat-setters">0</strong><span>位出题人</span></div>
+        <div><strong id="stat-weeks">0</strong><span>周区间</span></div>
+      </aside>
+    </header>
+
+    <main class="chart-shell" aria-label="出题人与主题关键词关系图">
+      <svg id="chart" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMin meet" role="group" aria-labelledby="chart-title chart-desc">
+        <title id="chart-title">周末活主题出题人与关键词放射图</title>
+        <desc id="chart-desc">半圆图贴页面上缘，数量最多的出题人居中，其余平衡分布两侧。背景关键词按对应角度展开。</desc>
+      </svg>
+      <details id="overflow" hidden>
+        <summary>查看未能在图中排下的关键词</summary>
+        <p id="overflow-words"></p>
+      </details>
+      <div class="tooltip" id="tooltip" role="status"></div>
+    </main>
+
+    <section class="time-panel" aria-label="时间区间选择">
+      <!-- <div>
+        <span class="range-title">筛选区间</span>
+        <output id="range-label">正在载入</output>
+        <p class="range-hint">日历刻度随窗口平滑移动，中心展开、远处压缩。慢滚细调、快滚加速；到达右端后改为调整起点。</p>
+      </div> -->
+      <svg id="timeline" viewBox="0 0 1200 250" role="group" aria-label="时间轴、按出题人堆叠的每月主题题柱状图与居中区间"></svg>
+    </section>
+  </div>
+
+  <script defer src="vendor/d3.v7.min.js"></script>
+  <script defer src="themes.js"></script>
+  <script defer src="embeddings.js"></script>
+  <script defer src="interaction.js"></script>
+  <script defer src="app.js"></script>
+</body>
+</html>

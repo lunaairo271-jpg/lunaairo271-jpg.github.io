@@ -254,6 +254,28 @@ a {
   color: var(--muted);
 }
 
+.project-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  color: var(--primary-strong);
+  font-size: 0.9rem;
+}
+
+.project-links a:hover,
+.project-card h3 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.project-links a:focus-visible,
+.project-card h3 a:focus-visible {
+  outline: 2px solid var(--primary-strong);
+  outline-offset: 5px;
+}
+
 .contact-box {
   display: flex;
   align-items: center;
